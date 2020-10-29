@@ -9,18 +9,78 @@ namespace MenuCSharpVisualStudio2019
 {
     class Program
     {
+
         static void Main(string[] args)
         {// incio de l programa
             {
                 Marco();// va la marco
                 // el menu en si. Presentacion de opcines
-                Console.SetCursorPosition(10, 5);
+                Console.SetCursorPosition(20, 5);
                 Console.Write(" MenuCharpVisualStudio2019");
+                Console.SetCursorPosition(10, 7);
+                Console.Write("0- salir");
+              
+                
+                
+                
+                Console.SetCursorPosition(10,20);
+                Console.Write("Que opcion eleiges: ");
+
+                int opcion;
+
+                opcion = int.Parse(Console.ReadLine());
+
+                // selecionar ruta por Switch
+                switch(opcion)
+                {
+                    case 0:
+                        // opcion salida
+                        Salida(opcion);
+                        break;
+                    case 1:
+
+                        Borrado();
+                        Marco();
+
+                        Console.SetCursorPosition(10, 5);
+                        Console.Write("La opcion elegida es: " + opcion);
+
+
+
+                        break;
+
+                    default:
+
+                        Borrado();
+                        Marco();
+
+
+                        Console.SetCursorPosition(10, 5);
+                        Console.Write("La opcion elegida es: " + opcion + " no es reconocida por la aplicación");
+
+                        break;
+
+                }
 
 
                 Borrado();
             }
 
+        }
+
+        private static void Salida(int opcion)
+        {
+            Borrado();
+            Marco();
+
+            Console.SetCursorPosition(10, 5);
+            Console.Write("La opcion elegida es: " + opcion);
+            Console.SetCursorPosition(10, 10);
+            Console.Write("gracias por utilzar mi aplicacion ");
+            Console.ReadKey();
+
+
+            Borrado();
         }
 
         private static void Borrado()
