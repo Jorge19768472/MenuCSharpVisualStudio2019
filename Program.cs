@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,39 +13,64 @@ namespace MenuCSharpVisualStudio2019
 
         static void Main(string[] args)
         {// incio de l programa
+            Menu();
+
+        }
+
+        private static void Menu()
+        {
+            Marco();// va la marco
+                    // el menu en si. Presentacion de opcines
+            Console.SetCursorPosition(20, 5);
+            Console.Write(" MenuCharpVisualStudio2019");
+            Console.SetCursorPosition(10, 7);
+            Console.Write("0- salir");
+            Console.SetCursorPosition(10, 9);
+            Console.Write("1- opcoin ");
+
+
+
+
+            Console.SetCursorPosition(10, 20);
+            Console.Write("Que opcion eleiges: ");
+
+            int opcion;
+            opcion = Eleccion();
+        }
+
+        private static int Eleccion()
+        {
+            int opcion = Convert.ToInt32(Console.ReadLine());
+            try
             {
-                Marco();// va la marco
-                // el menu en si. Presentacion de opcines
-                Console.SetCursorPosition(20, 5);
-                Console.Write(" MenuCharpVisualStudio2019");
-                Console.SetCursorPosition(10, 7);
-                Console.Write("0- salir");
-              
-                
-                
-                
-                Console.SetCursorPosition(10,20);
-                Console.Write("Que opcion eleiges: ");
-
-                int opcion;
-
                 opcion = int.Parse(Console.ReadLine());
-
-                // selecionar ruta por Switch
-                switch(opcion)
+                switch (opcion)
                 {
                     case 0:
                         // opcion salida
                         Salida(opcion);
                         break;
                     case 1:
-
+                        // opcion primaria
                         Borrado();
                         Marco();
 
+                        Console.SetCursorPosition(10, 7);
+                        Console.Write(" La oopcion  elegida:" + opcion);
+
+
+                        break;
+
+                    case 2:
+                        //opcion segundaria
                         Console.SetCursorPosition(10, 5);
                         Console.Write("La opcion elegida es: " + opcion);
 
+                        break;
+                    case 3:
+                        // opcion tercera
+                        Console.SetCursorPosition(10, 5);
+                        Console.Write("La opcion elegida es: " + opcion);
 
 
                         break;
@@ -61,11 +87,20 @@ namespace MenuCSharpVisualStudio2019
                         break;
 
                 }
-
-
-                Borrado();
+            }
+            catch
+            {
+                Console.SetCursorPosition(10, 19);
+                Console.Write("Falo; puse cula quier tecka para salir del profema");
+                Console.ReadKey();
             }
 
+            // selecionar ruta por Switch
+
+
+
+            Borrado();
+            return opcion;
         }
 
         private static void Salida(int opcion)
