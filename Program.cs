@@ -91,7 +91,7 @@ namespace MenuCSharpVisualStudio2019
             catch
             {
                 Console.SetCursorPosition(10, 19);
-                Console.Write("Falo; puse cula quier tecka para salir del profema");
+                Console.Write("Fallo; pulse cual quier tecla para salir del programa");
                 Console.ReadKey();
             }
 
