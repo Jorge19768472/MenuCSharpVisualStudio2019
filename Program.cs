@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Progrma base de menu 
+// muy parecido al programa de Visual basic que hay en el github 
+// creado por mi y que esta ahi
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
